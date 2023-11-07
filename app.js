@@ -1,10 +1,13 @@
 const express = require('express');
+require("dotenv").config();
+
 const app = express();
 app.use(express.static('public'));
 
+const port = process.env.PORT || 4000;
 
-app.listen(3000, ()=>{
-    console.log('Servidor funcionando');
+app.listen(port, ()=>{
+    console.log(`Servidor funcionando en puerto ${port}`);
 });
 
 app.get('/', (req,res)=>{
